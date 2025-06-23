@@ -1,0 +1,63 @@
+{
+  "name": "rakesh-das-3d-portfolio",
+  "version": "1.0.0",
+  "description": "A stunning 3D interactive portfolio website for Rakesh Das showcasing professional experience, skills, and projects",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8080 -c-1",
+    "dev": "http-server -p 3000 -c-1 -o",
+    "serve": "python -m http.server 8000",
+    "build": "echo 'Static site - no build process needed'",
+    "lint": "echo 'Linting HTML, CSS, and JS files...'",
+    "preview": "http-server -p 8080 -o"
+  },
+  "keywords": [
+    "portfolio",
+    "3d",
+    "three.js",
+    "interactive",
+    "resume",
+    "web-development",
+    "frontend",
+    "javascript",
+    "css3",
+    "html5",
+    "responsive",
+    "animation"
+  ],
+  "author": {
+    "name": "Rakesh Das",
+    "email": "imrakesh.gir@gmail.com",
+    "phone": "+91 7992353564"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RakeshDas16/rakesh-portfolio"
+  },
+  "homepage": "https://rakeshdas16.github.io/rakesh-portfolio",
+  "bugs": {
+    "url": "https://github.com/RakeshDas16/rakesh-portfolio/issues",
+    "email": "imrakesh.gir@gmail.com"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "files": [
+    "index.html",
+    "styles.css",
+    "script.js",
+    "README.md"
+  ]
+} 

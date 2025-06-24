@@ -463,19 +463,58 @@ function updateActiveNavLink() {
 function initMobileNavigation() {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const mobileOverlay = document.querySelector('.mobile-overlay');
     
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
+            const isActive = navMenu.classList.contains('active');
+            
+            // Toggle navigation
             navMenu.classList.toggle('active');
             mobileToggle.classList.toggle('active');
+            
+            // Toggle overlay
+            if (mobileOverlay) {
+                mobileOverlay.classList.toggle('active');
+            }
+            
+            // Prevent body scroll when menu is open
+            if (!isActive) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
+        
+        // Close menu when clicking on overlay
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', () => {
+                closeMenu();
+            });
+        }
         
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileToggle.classList.remove('active');
+                closeMenu();
             });
+        });
+        
+        // Close menu function
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            if (mobileOverlay) {
+                mobileOverlay.classList.remove('active');
+            }
+            document.body.style.overflow = '';
+        }
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
         });
     }
 }

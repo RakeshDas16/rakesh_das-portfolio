@@ -46,6 +46,14 @@
     <!-- Header -->
     <header class="modern-header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
         <div class="logo">RAKESH DAS</div>
+        
+        <!-- Mobile hamburger menu -->
+        <button class="mobile-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
         <nav class="nav-menu">
             <a href="#home" class="nav-link">
                 <span class="nav-icon">🏠</span>
@@ -95,6 +103,9 @@
         </nav>
         <button class="contact-btn mobile-contact" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</button>
     </header>
+
+    <!-- Mobile overlay for navigation -->
+    <div class="mobile-overlay"></div>
 
     <!-- Hero Main Section -->
     <main class="hero-main" id="home">
